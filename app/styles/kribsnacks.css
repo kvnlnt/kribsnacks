@@ -33,14 +33,18 @@ h1 {
 }
 
 .question, .answer {
-    margin:20px;
+    padding:20px;
 }
 
 .card {
     padding:0px;
     border:1px solid #DDDDDD;
-    margin-bottom:10px;
     background-color: #FFFFFF;
+    color:#999999;
+}
+
+.question {
+    background-color: #333333;
 }
 
 .card button {
