@@ -26,7 +26,7 @@ var Main = {
 
         // page
         var record = Record.create({ title: 'Programming' });
-        var page   = Page.create({ jst: JST.ui, record: record, container: container });
+        var page   = UiPage.create({ jst: JST.ui, record: record, container: container });
         
         // add parts
         page

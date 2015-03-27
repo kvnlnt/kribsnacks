@@ -1,7 +1,8 @@
 var JST = (function(jst){
 
     jst.menu = ''
-    + '<h1>KRIBSNACKS</h1>'
+    + '<h1 class="logo">KRIBSNACKS</h1>'
+    + '<div class="logo-mini">KB</div>'
     + '<h2>Topics</h2>'
     + '<ul class="topics">'
     + '<% for(var topic in this.topics) { %>'

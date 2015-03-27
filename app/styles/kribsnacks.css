@@ -19,6 +19,29 @@ h1 {
     padding:20px;
 }
 
+#menu.collapsed {
+    width:20px;
+}
+
+#menu .logo {
+    cursor: pointer;
+}
+
+#menu .logo-mini {
+    display: none;
+    cursor: pointer;
+}
+
+#menu.collapsed .logo-mini {
+    display: block;
+}
+
+#menu.collapsed .logo,
+#menu.collapsed h2,
+#menu.collapsed .topics {
+    display:none;
+}
+
 #menu .topics {
     list-style: none;
     margin:0;

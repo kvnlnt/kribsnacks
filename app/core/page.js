@@ -8,6 +8,7 @@ var Page = {
         newPage._parts      = {};
         newPage._container  = options.container || $('body');
         newPage.compiled    = Pubsub.create(this);
+        newPage.dom         = {};
         newPage.partRemoved = Pubsub.create(this);
         newPage.partAdded   = Pubsub.create(this);
         newPage.template    = Template.create(newPage._jst) || Template.create();
@@ -16,10 +17,19 @@ var Page = {
         return newPage;
     },
 
-    init: function(){
-        this.compileTemplate();
-        this.record.recordChanged.sub(this.compileTemplate.bind(this));
-        this.getContainer().html(this.getHtml());
+    init: function(scope){
+
+        var scope = scope || this;
+        scope.compileTemplate();
+        scope.registerEvents();
+        scope.getContainer().html(scope.getHtml());
+        scope.record.init(); // auto init record
+        return scope;
+        
+    },
+
+    registerEvents:function(){
+        return this;
     },
 
     compileTemplate:function(){
