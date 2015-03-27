@@ -20,7 +20,7 @@ var Main = {
 
         // parts
         var deck = DeckPart.create({ 
-            jst: JST.cohesion, 
+            jst: JST.deck, 
             record: CohesionRecord.create()
         });
 

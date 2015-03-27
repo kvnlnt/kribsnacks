@@ -4,11 +4,11 @@ CohesionRecord.schema = {
     cards:[
         { 
             question: 'What is your name?',
-            answer: 'Kevin'
+            answer: 'Your name is Kevin'
         },
         { 
-            question: 'What is today?',
-            answer: '10/12/76'
+            question: 'What is your birthday?',
+            answer: 'Your birthday is 10/12/1976'
         }
     ]
 };

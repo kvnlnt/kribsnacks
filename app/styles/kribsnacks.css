@@ -12,7 +12,6 @@ h1 {
     font-size:14px;
 }
 
-
 #menu {
     display:table-cell;
     width:30%;
@@ -25,4 +24,32 @@ h1 {
     width:70%;
     background-color: #f2f2f2;
     padding:20px;
+}
+
+.cards {
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+
+.question, .answer {
+    margin:20px;
+}
+
+.card {
+    padding:0px;
+    border:1px solid #DDDDDD;
+    margin-bottom:10px;
+    background-color: #FFFFFF;
+}
+
+.card button {
+    border:0;
+    width:100%;
+    padding:10px;
+    background-color: #f2f2f2;
+}
+
+.hidden {
+    display:none;
 }
