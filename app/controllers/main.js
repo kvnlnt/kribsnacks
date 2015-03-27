@@ -16,16 +16,16 @@ var Main = {
 
     },
 
-    cohesion: function(container){
+    programming: function(container){
 
         // parts
         var deck = DeckPart.create({ 
             jst: JST.deck, 
-            record: CohesionRecord.create()
+            record: ProgrammingRecord.create()
         });
 
         // page
-        var record = Record.create({ title: 'Cohesion' });
+        var record = Record.create({ title: 'Programming' });
         var page   = Page.create({ jst: JST.ui, record: record, container: container });
         
         // add parts

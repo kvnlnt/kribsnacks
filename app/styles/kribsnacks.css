@@ -14,23 +14,43 @@ h1 {
 
 #menu {
     display:table-cell;
-    width:30%;
+    width: 150px;
     background-color:#e2e2e2;
     padding:20px;
 }
 
+#menu .topics {
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+
+#menu .topics li {
+    padding-bottom:5px;
+}
+
 #page {
     display: table-cell;
-    width:70%;
     background-color: #f2f2f2;
     padding:20px;
+}
+
+h3 {
+    margin:0;
+}
+
+.deck {
+    border:0;
+    border-bottom:1px solid #e2e2e2;
+    background: transparent;
+    width:100%;
+    line-height: 50px;
 }
 
 .cards {
     list-style: none;
     margin:0;
     padding:0;
-    display: block;
     width:100%;
 }
 

@@ -7,8 +7,8 @@ TopicsRecord.schema = {
             path:'/'
         },
         { 
-            name:'Cohesion',
-            path:'/cohesion'
+            name:'Programming',
+            path:'/programming'
         },
     ]
 };

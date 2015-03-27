@@ -6,7 +6,7 @@ $(document).ready(function(){
 
     kribsnacks
     .addPath('/', Main.dashboard)
-    .addPath('/cohesion', Main.cohesion)
+    .addPath('/programming', Main.programming)
     .init()
     
 });

@@ -5,10 +5,11 @@ DeckPart.registerEvents = function(){
     // elements
     var container      = this.getContainer();
     this.dom.flip      = '.flip';
-    this.dom.$flip     = container.find(this.dom.flip);
+    this.dom.deck      = '.deck';
    
     // element events
     container.on('click', this.dom.flip, this.flipCard);
+    container.on('click', this.dom.deck, this.showHideDeck);
 
 };
 
@@ -25,3 +26,8 @@ DeckPart.flipCard = function(){
         $(this).removeClass("animated").dequeue();
     });
 };
+
+DeckPart.showHideDeck = function(){
+    $(this).parent('h3').next('.cards').toggleClass('hidden');
+};
+
