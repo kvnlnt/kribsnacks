@@ -1,4 +1,0 @@
-describe("Core:View", function() {
-
-
-});
