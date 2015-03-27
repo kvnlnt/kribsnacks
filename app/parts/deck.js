@@ -3,12 +3,12 @@ var DeckPart = Object.create(Part);
 DeckPart.registerEvents = function(){
 
     // elements
-    var container  = this.getContainer();
-    this.dom.btn   = 'button';
-    this.dom.$btn  = container.find(this.dom.btn);
+    var container      = this.getContainer();
+    this.dom.flip      = '.flip';
+    this.dom.$flip     = container.find(this.dom.flip);
    
     // element events
-    container.on('click', this.dom.btn, this.flipCard);
+    container.on('click', this.dom.flip, this.flipCard);
 
 };
 
