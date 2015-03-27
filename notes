@@ -1,0 +1,90 @@
+https://alexatnet.com/articles/model-view-controller-mvc-javascript
+
+
+// API:
+
+
+var kordfu = {
+
+    routes: {
+        '/page/one':   [Controller, 'page_one'],
+        '/page/two':   [Controller, 'page_two'],
+        '/page/three': [Controller, 'page_three']
+    },
+
+};
+
+// controllers are what create and connect all the parts
+var controller = new Controller();
+
+// a router "is" the app
+var router = Router.create();
+
+// register routes
+router
+.addRoute('/page/one',   controller.page_one);
+.addRoute('/page/two',   controller.page_two);
+.addRoute('/page/three', controller.page_three);
+ 
+
+// inside a controller
+var Controller = function(){
+    this.current_page = this.page_one;
+};
+
+Controller.prototype = {
+  
+    page_one: function(){
+
+        // create model and view instances
+        var view = View.create();
+        var model = new Model();
+
+        // tie events
+        model.someEvent.sub(view.someFunction);
+
+        // render view
+        view.render();
+
+    },
+
+    page_two: function(){
+
+        // create model and view instances
+        var view = View.create();
+        var model = new Model();
+
+        // tie events
+        model.someEvent.sub(view.someFunction);
+
+        // render view
+        view.render();
+
+    }
+
+};
+
+
+rip jtab:
+var json = {};
+
+_.each(jtab.ChordList(), function(chord){
+
+    var voicings = [];
+
+    for(var i=0; i < 12; i++){
+
+        var voicing = new jtabChord(chord + ':' + i);
+        voicing.chordArray.shift();
+        var filtered_voicing = _.map(voicing.chordArray, function(fingering){ 
+            return fingering[0];
+        });
+        voicings.push(filtered_voicing);
+
+    }
+
+    json[chord] = voicings;
+
+});
+
+document.write(JSON.stringify(json));
