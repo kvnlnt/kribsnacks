@@ -9,10 +9,11 @@ var Main = {
 
         // page
         var record = Record.create({ title: 'Dashboard' });
-        var page   = Page.create({ jst: JST.ui, record: record, container: container });
+        var page   = UiPage.create({ jst: JST.ui, record: record, container: container });
         
         // add parts
-        page.addPart('menu', menuPart, '#menu');
+        page
+        .addPart('menu', menuPart, '#menu');
 
     },
 

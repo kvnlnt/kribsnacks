@@ -4,11 +4,13 @@ TopicsRecord.schema = {
     topics:[
         { 
             name:'Dashboard',
-            path:'/'
+            path:'/',
+            iconClass:'fa-tachometer'
         },
         { 
             name:'Programming',
-            path:'/programming'
+            path:'/programming',
+            iconClass:''
         },
     ]
 };

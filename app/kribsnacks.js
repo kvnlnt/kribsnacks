@@ -5,8 +5,8 @@ $(document).ready(function(){
     kribsnacks = App.create('container');
 
     kribsnacks
-    .addPath('/', Main.dashboard)
-    .addPath('/programming', Main.programming)
+    .addController('/', Main.dashboard)
+    .addController('/programming', Main.programming)
     .init()
     
 });

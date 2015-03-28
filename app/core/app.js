@@ -1,73 +1,70 @@
 var App = {
 
-    create:function(container_id, paths){
-        var newApp          = Object.create(this);
-        newApp.container_id = container_id || 'container';
-        newApp.container    = $('#'+newApp.container_id);
-        newApp.Paths        = paths || {};
-        newApp.CurrentPath  = null;
-        newApp.Router       = Router.create();
-        newApp.pathAdded    = Pubsub.create(this);
-        newApp.pathRemoved  = Pubsub.create(this);
-        newApp.pathChanged  = Pubsub.create(this);
+    create:function(container_id, controllers){
+        var newApp               = Object.create(this);
+        newApp.container_id      = container_id || 'container';
+        newApp.container         = $('#'+newApp.container_id);
+        newApp.Controllers       = controllers || {};
+        newApp.CurrentController = null;
+        newApp.Router            = Router.create();
+        newApp.controllerAdded   = Pubsub.create(this);
+        newApp.controllerRemoved = Pubsub.create(this);
+        newApp.controllerChanged = Pubsub.create(this);
         return newApp;
     },
 
-    init: function(path){
+    init: function(route){
         var _this = this;
-        var path  = path || this.Router.getRouteByHash();
+        var route = route || this.Router.getRouteByHash();
 
         // add default paths
-        this.addPath('/404', Controller._404);
+        this.addController('/404', Controller._404);
 
         // setup router
         this.Router.routeChanged.sub(function(e){ _this.load(e.route); });
         this.Router.watch();
 
         // load default path
-        this.load(path);
+        this.load(route);
     },
 
-    load: function(path){
-        this.setCurrentPath(this.getPath(path));
-        this.getCurrentPath()(this.container);
+    load: function(route){
+        this.setCurrentController(this.getController(route));
+        this.getCurrentController()(this.container);
     },
 
-    getPaths: function() {
-        return this.Paths;
+    getControllers: function() {
+        return this.Controllers;
     },
 
-    getPath: function(path){
-        return this.Paths[path];
+    getController: function(route){
+        return this.Controllers[route];
     },
 
-    addPath: function(path, controller) {
+    addController: function(route, controller) {
 
         // keep router paths and app paths in sync
-        this.Router.addRoute(path);
-        this.Paths[path] = controller;
-        this.pathAdded.pub({ path: path });
+        this.Router.addRoute(route);
+        this.Controllers[route] = controller;
+        this.controllerAdded.pub({ controller: controller });
         return this;
     },
 
-    removePath: function(path) {
-        var deleted_path;
-        deleted_path = this.Paths[path];
-        delete this.Paths[path];
-        this.pathRemoved.pub({ path: deleted_path });
-        if (deleted_path === this.CurrentPath) { this.setCurrentPath(null); }
+    removeController: function(route) {
+        var deleted_controller;
+        deleted_controller = this.Controllers[route];
+        delete this.Controllers[route];
+        this.controllerRemoved.pub({ controller: deleted_controller });
+        if (route === this.CurrentRoute) { this.setCurrentRoute(null); }
         return this;
     },
 
-    getCurrentPath: function() {
-        return this.CurrentPath;
+    getCurrentController: function() {
+        return this.CurrentController;
     },
     
-    setCurrentPath: function(path) {
-        var previous;
-        previous = this.CurrentPath;
-        this.CurrentPath = path;
-        this.pathChanged.pub(path, previous);
+    setCurrentController: function(controller) {
+        this.CurrentController = controller;
         return this;
     },
 

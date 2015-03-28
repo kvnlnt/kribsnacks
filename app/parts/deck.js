@@ -18,8 +18,8 @@ DeckPart.init = function(){
 };
 
 DeckPart.flipCard = function(){
-    $(this).siblings('.question, .answer').toggleClass('hidden');
-    $(this).parent('.card')
+    $(this).parents('.card').find('.question, .answer').toggleClass('hidden');
+    $(this).parents('.card')
     .addClass('animated')
     .delay(200)
     .queue(function(){

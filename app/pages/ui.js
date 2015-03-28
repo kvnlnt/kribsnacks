@@ -14,7 +14,9 @@ UiPage.registerEvents = function(){
 };
 
 UiPage.init = function(){
+
     Page.init(this);
+    
 };
 
 UiPage.toggleMenu = function(){
