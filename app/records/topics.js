@@ -3,7 +3,7 @@ var TopicsRecord = Object.create(Record);
 TopicsRecord.schema = {
     topics:[
         { 
-            name:'Dashboard',
+            name:'Topics',
             path:'/',
             iconClass:'fa-tachometer'
         },

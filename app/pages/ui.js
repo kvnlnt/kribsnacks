@@ -9,7 +9,6 @@ UiPage.registerEvents = function(){
     this.dom.logoMini  = '.logo-mini';
    
     // element events
-    container.off();
     container.on('click', this.dom.logo + ', ' + this.dom.logoMini, this.toggleMenu);
 
 };

@@ -5,15 +5,14 @@
 
 var Main = {
 
-    dashboard: function(container){
+    home: function(container){
 
         // page
-        var record = Record.create({ title: 'Dashboard' });
-        var page   = UiPage.create({ jst: JST.ui, record: record, container: container });
+        var page   = HomePage.create({ jst: JST.home, container: container });
         
         // add parts
         page
-        .addPart('menu', menuPart, '#menu');
+        .addPart('topics', topicsPart, '#topics');
 
     },
 

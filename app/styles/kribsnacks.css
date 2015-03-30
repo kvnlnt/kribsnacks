@@ -61,19 +61,21 @@ body {
     display:none;
 }
 
-#menu .topics {
+.topics {
     list-style: none;
     padding:0;
+    font-size: 1.6rem;
 }
 
-#menu .topics li {
+.topics li {
     padding-bottom:5px;
 }
 
-#menu a {
+.topics a {
     color:#888888;
     text-decoration: none;
     margin-right:20px;
+    line-height: 2rem;
 }
 
 #menu a:hover {

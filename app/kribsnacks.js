@@ -5,7 +5,7 @@ $(document).ready(function(){
     kribsnacks = App.create('container');
 
     kribsnacks
-    .addController('/', Main.dashboard)
+    .addController('/', Main.home)
     .addController('/programming', Main.programming)
     .init()
     

@@ -21,6 +21,7 @@ var Page = {
 
         var scope = scope || this;
         scope.compileTemplate();
+        scope.getContainer().off(); // register events need to start fresh
         scope.registerEvents();
         scope.getContainer().html(scope.getHtml());
         scope.record.init(); // auto init record
