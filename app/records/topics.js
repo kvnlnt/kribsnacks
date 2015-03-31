@@ -5,12 +5,14 @@ TopicsRecord.schema = {
         { 
             name:'Topics',
             path:'/',
-            iconClass:'fa-tachometer'
+            iconClass:'fa-tachometer',
+            source:'data/programming.json'
         },
         { 
             name:'Programming',
             path:'/programming',
-            iconClass:''
+            iconClass:'',
+            source:'data/programming.json'
         },
     ]
 };
