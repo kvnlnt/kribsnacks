@@ -11,6 +11,9 @@ DeckPart.registerEvents = function(){
     container.on('click', this.dom.flip, this.flipCard);
     container.on('click', this.dom.deck, this.showHideDeck);
 
+    // pub/sub
+    this.record.recordChanged.sub(this.compileTemplate.bind(this));
+
 };
 
 DeckPart.init = function(){

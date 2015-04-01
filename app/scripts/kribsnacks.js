@@ -6,7 +6,7 @@ $(document).ready(function(){
 
     kribsnacks
     .addController('/', Main.home)
-    .addController('/programming', Main.programming)
+    .addController('/programming', Main.domain)
     .init()
     
 });

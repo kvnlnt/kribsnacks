@@ -2,7 +2,8 @@ var Page = {
 
     create:function(options){
         var newPage         = Object.create(this);
-        newPage._options    = options || {};
+        var options         = options || {};
+        newPage._options    = options;
         newPage._jst        = options.jst || '';
         newPage._html       = '';
         newPage._parts      = {};
@@ -34,7 +35,7 @@ var Page = {
     },
 
     compileTemplate:function(){
-        var html = this.template.compile(this.record.val());
+        var html = this.template.compile(this.record.get());
         this.setHtml(html.get());
         this.compiled.pub({ html: this.getHtml() });
         return html;

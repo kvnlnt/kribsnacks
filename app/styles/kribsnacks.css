@@ -57,21 +57,21 @@ body {
 
 #menu.collapsed .logo,
 #menu.collapsed h2,
-#menu.collapsed .topics {
+#menu.collapsed .domains {
     display:none;
 }
 
-.topics {
+.domains {
     list-style: none;
     padding:0;
     font-size: 1.6rem;
 }
 
-.topics li {
+.domains li {
     padding-bottom:5px;
 }
 
-.topics a {
+.domains a {
     color:#888888;
     text-decoration: none;
     margin-right:20px;
@@ -82,7 +82,7 @@ body {
     color:#FFFFFF;
 }
 
-#menu .topic {
+#menu .domain {
     font-size: 1.2rem;
     line-height: 2.4rem;
     text-transform: uppercase;

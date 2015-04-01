@@ -1,0 +1,23 @@
+{
+  "name": "kribsnacks",
+  "version": "0.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kvnlnt/kribsnacks.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kvnlnt/kribsnacks/issues"
+  },
+  "homepage": "https://github.com/kvnlnt/kribsnacks",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "preen": "^1.2.0"
+  }
+}

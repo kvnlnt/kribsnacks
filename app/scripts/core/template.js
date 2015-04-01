@@ -2,7 +2,7 @@ var Template = {
 
     create:function(template){
         var newTemplate       = Object.create(this);
-        newTemplate._template  = template || {};
+        newTemplate._template  = template || '';
         newTemplate._compiled  = null;
         return newTemplate;
     },
