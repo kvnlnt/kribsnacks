@@ -23,8 +23,11 @@ var Main = {
     domain: function(container){
 
         // parts
-        var record  = Record.create({ dataIsRemote:true, endpoint:'data/programming.json' });
-        var deck    = DeckPart.create({ jst: JST.deck, record: record });
+        // var record  = Record.create({ dataIsRemote:true, endpoint:'data/programming.json' });
+        // var deck    = DeckPart.create({ jst: JST.deck, record: record });
+
+        var record = Record.create({ domain:'programming', topics:{} });
+        var topics = Part.create({ jst: JST.topics, record: record });
 
         // // page
         var record = Record.create({ record: { title: 'deck' } });
@@ -32,8 +35,8 @@ var Main = {
         
         // add parts
         page
-        .addPart('menu', menuPart, '#menu')
-        .addPart('deck', deck, '#deck');
+        .addPart('topics', topics, '#topics');
+        // .addPart('deck', deck, '#deck');
 
     },
     

@@ -1,6 +1,7 @@
 var JST = (function(jst){
 
     jst.topics = ''
+    + '<h1 class="logo">KRIBSNACKS <i class="fa fa-diamond"></i></h1>'
     + '<ul class="topics">'
     + '<% for(var topic in this.topics) { %>'
     + '<li class="topic">'
@@ -8,7 +9,7 @@ var JST = (function(jst){
     + '</li>'
     + '<% } %>'
     + '</ul>';
-    
+
     return jst;
 
 }(JST || {}));
